@@ -61,11 +61,6 @@ const Index = () => {
             <div className="absolute bottom-0 left-0 right-0 bg-[#3d2914]/80 text-white p-2 font-manga text-center text-sm">
               CHAPTER 1: THE CODER'S JOURNEY BEGINS
             </div>
-            
-            {/* Effect lines */}
-            <div className="absolute top-2 right-2 w-16 h-16 opacity-80">
-              <img src="/action-lines.svg" alt="" className="w-full h-full" />
-            </div>
           </motion.div>
           
           {/* Third comic panel with peace sign photo */}

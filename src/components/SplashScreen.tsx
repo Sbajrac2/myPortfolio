@@ -102,25 +102,6 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
                 Aspiring Software Engineer
               </motion.p>
               
-              {/* Decorative action lines */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.3 }}
-                className="absolute top-1/4 right-4 w-20 h-20"
-              >
-                <img src="/action-lines.svg" alt="" className="w-full h-full" />
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.1, duration: 0.3 }}
-                className="absolute bottom-1/4 left-4 w-16 h-16 transform rotate-45"
-              >
-                <img src="/action-dots.svg" alt="" className="w-full h-full" />
-              </motion.div>
-              
               {/* Comic style speech bubble */}
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
