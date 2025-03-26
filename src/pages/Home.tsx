@@ -1,146 +1,153 @@
 
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Terminal from '@/components/Terminal';
-import TweetPanel from '@/components/TweetPanel';
-import { staggerContainer, fadeUp } from '@/lib/animations';
-import { ArrowDownCircle } from 'lucide-react';
-import { useGitHubRepos } from '@/hooks/useGitHubRepos';
+import { staggerContainer, comicPanel, fadeUp } from '@/lib/animations';
 
 const Home = () => {
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
-  const { repos, loading } = useGitHubRepos('Sbajrac2', 3);
-
-  // Hide scroll indicator when user scrolls
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowScrollIndicator(false);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <Layout>
-      <div className="page-container">
-        <section className="min-h-[80vh] flex flex-col justify-center items-center mb-16">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="manga-text text-3xl md:text-5xl lg:text-6xl mb-4 text-manga-primary dark:text-white manga-shadow">
-              THE ARCHITECT OF CODE
-            </h2>
-            <p className="text-lg md:text-xl max-w-2xl mx-auto text-foreground/90">
-              Computer Science undergrad at SUNY Oswego. Passionate about tech for building smarter and helpful systems. I enjoy working full stack and solving problems that impact real users.
-            </p>
-          </motion.div>
-          
-          <Terminal />
-          
-          {/* Scroll indicator */}
-          {showScrollIndicator && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 3, duration: 0.5 }}
-              className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center opacity-70 animate-bounce"
-            >
-              <ArrowDownCircle className="w-10 h-10 text-manga-secondary" />
-              <span className="block mt-2">Scroll for more</span>
-            </motion.div>
-          )}
-        </section>
-        
-        {/* Latest GitHub Projects */}
-        <motion.section 
+      <div className="container max-w-5xl mx-auto px-4 py-8">
+        <motion.div
           variants={staggerContainer}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.3 }}
-          className="mb-16"
+          animate="show"
+          className="mb-12 text-center"
         >
-          <motion.h2 
-            variants={fadeUp}
-            className="font-manga text-3xl md:text-4xl mb-8 text-center text-manga-primary dark:text-white manga-shadow"
-          >
-            LATEST MISSIONS
-          </motion.h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {loading ? (
-              // Loading skeletons
-              Array.from({ length: 3 }).map((_, i) => (
-                <div key={i} className="manga-panel p-6 animate-pulse">
-                  <div className="h-6 bg-secondary rounded w-3/4 mb-3"></div>
-                  <div className="h-4 bg-secondary rounded w-1/2 mb-6"></div>
-                  <div className="h-20 bg-secondary rounded mb-6"></div>
-                  <div className="flex gap-2">
-                    <div className="h-6 bg-secondary rounded w-16"></div>
-                    <div className="h-6 bg-secondary rounded w-16"></div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              repos.map((repo, i) => (
-                <motion.div 
-                  key={repo.id}
-                  variants={fadeUp}
-                  className="manga-panel p-6"
-                >
-                  <h3 className="font-manga text-xl text-manga-primary dark:text-white">
-                    {repo.name.replace(/-/g, ' ')}
-                  </h3>
-                  <p className="text-sm text-manga-secondary mt-1">
-                    {new Date(repo.created_at).toLocaleDateString()}
-                  </p>
-                  <p className="mt-4 text-foreground/90 line-clamp-3 h-[4.5rem]">
-                    {repo.description || 'No description available.'}
-                  </p>
-                  <div className="mt-4">
-                    {repo.language && (
-                      <span className="inline-block bg-secondary px-3 py-1 rounded-full text-xs font-medium mr-2">
-                        {repo.language}
-                      </span>
-                    )}
-                    {repo.topics && repo.topics.slice(0, 3).map((topic) => (
-                      <span 
-                        key={topic}
-                        className="inline-block bg-secondary px-3 py-1 rounded-full text-xs font-medium mr-2 mt-2"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-6">
-                    <a 
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 bg-manga-secondary text-white rounded hover:bg-manga-secondary/90 transition"
-                    >
-                      View Project
-                    </a>
-                  </div>
-                </motion.div>
-              ))
-            )}
-          </div>
-        </motion.section>
+          <h1 className="manga-text text-4xl md:text-6xl mb-4 text-[#3d2914] dark:text-[#f5e7d3]">
+            SHRISHTIKA'S WORLD
+          </h1>
+          <p className="text-lg max-w-2xl mx-auto">
+            Navigate through the pages of my developer story
+          </p>
+        </motion.div>
         
-        {/* Tweet Panel */}
-        <section className="mb-16">
-          <h2 className="font-manga text-3xl md:text-4xl mb-8 text-center text-manga-primary dark:text-white manga-shadow">
-            DEV COMMUNITY
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* Terminal Panel */}
+          <motion.div 
+            variants={comicPanel}
+            initial="hidden"
+            animate="show"
+            className="manga-panel p-4 bg-[#e8d3b9] dark:bg-[#4a372a]"
+          >
+            <div className="manga-panel-title mb-4">
+              <h2 className="manga-text text-2xl">TERMINAL ACCESS</h2>
+              <div className="text-sm opacity-80">Type 'help' to see available commands</div>
+            </div>
+            <Terminal />
+          </motion.div>
+          
+          {/* Quick Profile Summary */}
+          <motion.div 
+            variants={comicPanel}
+            initial="hidden"
+            animate="show"
+            className="manga-panel p-6 bg-[#e8d3b9] dark:bg-[#4a372a] flex flex-col"
+          >
+            <div className="manga-panel-title mb-4">
+              <h2 className="manga-text text-2xl">MAIN CHARACTER</h2>
+              <div className="text-sm opacity-80">CS Undergrad at SUNY Oswego</div>
+            </div>
+            
+            <div className="flex-1 flex flex-col items-center justify-center text-center">
+              <img 
+                src="/lovable-uploads/9331f848-3d60-4c90-a001-3c60057bd422.png" 
+                alt="Shrishtika Profile" 
+                className="w-32 h-32 object-cover rounded-full border-4 border-[#8a5d3b] mb-4"
+              />
+              <h3 className="text-xl font-bold mb-2">Shrishtika Bajracharya</h3>
+              <p className="mb-4">Aspiring Software Engineer with a passion for building impactful solutions</p>
+              
+              <Link 
+                to="/profile" 
+                className="px-5 py-2 bg-[#8a5d3b] text-white rounded font-manga hover:bg-[#73482a] transition-colors"
+              >
+                READ MY STORY
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Manga Navigation Dashboard */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+          className="mb-8"
+        >
+          <h2 className="manga-text text-3xl mb-6 text-center text-[#3d2914] dark:text-[#f5e7d3]">
+            CHAPTER SELECT
           </h2>
-          <TweetPanel />
-        </section>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { 
+                title: "PROFILE", 
+                chapter: "01", 
+                desc: "The origin story", 
+                path: "/profile", 
+                bgColor: "bg-gradient-to-br from-[#fec6a1] to-[#fd9b6d]" 
+              },
+              { 
+                title: "PROJECTS", 
+                chapter: "02", 
+                desc: "The development adventures", 
+                path: "/projects", 
+                bgColor: "bg-gradient-to-br from-[#e5deff] to-[#c5b6ff]" 
+              },
+              { 
+                title: "CONNECT", 
+                chapter: "03", 
+                desc: "Join the story", 
+                path: "mailto:shrishtika.vajra@gmail.com", 
+                bgColor: "bg-gradient-to-br from-[#ffdee2] to-[#ffb1bc]" 
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                className={`manga-panel ${item.bgColor} p-5 text-[#3d2914] flex flex-col h-44 transform hover:scale-105 transition-transform relative overflow-hidden`}
+              >
+                {/* Manga panel styling */}
+                <div className="absolute top-0 right-0 p-1 bg-[#3d2914] text-white font-manga text-xs">
+                  CH.{item.chapter}
+                </div>
+                
+                <div className="manga-panel-content">
+                  <h3 className="manga-text text-2xl mb-2">{item.title}</h3>
+                  <p className="text-sm mb-4">{item.desc}</p>
+                  
+                  {/* Action corner */}
+                  <div className="absolute bottom-3 right-3">
+                    <Link 
+                      to={item.path}
+                      className="w-10 h-10 rounded-full bg-[#3d2914] text-white flex items-center justify-center transform rotate-3 hover:rotate-6 transition-transform"
+                    >
+                      {index+1}
+                    </Link>
+                  </div>
+                  
+                  {/* Manga corner effect */}
+                  <div className="absolute bottom-0 left-0 border-b-[20px] border-l-[20px] border-b-[#3d2914] border-l-transparent"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* Featured Quote */}
+        <motion.div
+          variants={comicPanel}
+          initial="hidden"
+          animate="show" 
+          className="manga-panel p-6 bg-[#f5e7d3] dark:bg-[#4a372a] text-center mb-8"
+        >
+          <blockquote className="text-xl italic mb-2">
+            "The best way to predict the future is to create it."
+          </blockquote>
+          <cite className="text-sm">- Inspiration for my developer journey</cite>
+        </motion.div>
       </div>
     </Layout>
   );

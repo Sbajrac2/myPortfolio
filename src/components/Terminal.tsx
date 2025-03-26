@@ -124,21 +124,25 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="terminal-window w-full h-72 sm:h-80 md:h-96 animate-pulse-glow"
+      className="w-full h-72 sm:h-80 md:h-96 rounded-lg overflow-hidden manga-terminal"
+      style={{
+        boxShadow: "0 0 15px rgba(255, 107, 107, 0.3)",
+        border: "2px solid #ff6b6b"
+      }}
     >
-      <div className="flex items-center justify-between p-2 border-b border-terminal-accent/30">
+      <div className="flex items-center justify-between p-2 bg-[#ff6b6b] border-b border-[#ff9e9e]">
         <div className="flex space-x-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        <div className="terminal-text text-xs">terminal@shrishtika:~</div>
+        <div className="text-xs font-manga text-white">terminal@shrishtika:~</div>
         <div></div>
       </div>
       
       <div 
         ref={terminalRef}
-        className="p-4 font-code text-terminal-text text-sm h-[calc(100%-40px)] overflow-y-auto"
+        className="p-4 font-code text-[#ffcb8c] text-sm h-[calc(100%-40px)] overflow-y-auto bg-[#3d2914]"
       >
         {output.map((line, index) => (
           <div key={index} className="mb-2 whitespace-pre-wrap">
@@ -147,16 +151,16 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
         ))}
         
         <div className="flex items-center">
-          <span className="mr-2">{'>'}</span>
+          <span className="mr-2 text-[#ff9e9e]">{'>'}</span>
           <input
             type="text"
             value={input}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent outline-none terminal-text"
+            className="flex-1 bg-transparent outline-none text-[#ffcb8c]"
             disabled={isTyping}
           />
-          <span className={`inline-block h-4 w-2 bg-terminal-text ml-0.5 ${isTyping ? 'animate-blink' : ''}`}></span>
+          <span className={`inline-block h-4 w-2 bg-[#ff9e9e] ml-0.5 ${isTyping ? 'animate-blink' : ''}`}></span>
         </div>
       </div>
     </motion.div>
