@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -103,12 +104,12 @@
 
 @layer components {
   .manga-panel {
-    @apply relative bg-white dark:bg-panel border-2 border-panel-border dark:border-panel-border shadow-manga overflow-hidden;
+    @apply relative bg-white dark:bg-panel border-2 border-panel-border dark:border-panel-border shadow-manga overflow-hidden transition-all duration-300;
     clip-path: polygon(0% 0%, 100% 0%, 98% 100%, 0% 98%);
   }
   
   .manga-panel-alt {
-    @apply relative bg-white dark:bg-panel border-2 border-panel-border dark:border-panel-border shadow-manga overflow-hidden;
+    @apply relative bg-white dark:bg-panel border-2 border-panel-border dark:border-panel-border shadow-manga overflow-hidden transition-all duration-300;
     clip-path: polygon(0% 0%, 98% 0%, 100% 100%, 2% 100%);
   }
   
@@ -129,7 +130,7 @@
   }
   
   .manga-terminal {
-    @apply bg-[#3d2914] border-2 border-[#ff6b6b] shadow-[0_0_15px_rgba(255,107,107,0.3)];
+    @apply bg-[#3d2914] border-2 border-[#ff6b6b] shadow-[0_0_15px_rgba(255,107,107,0.3)] transition-all duration-300;
   }
   
   .manga-panel-title {
@@ -137,12 +138,12 @@
   }
   
   .comic-bubble {
-    @apply relative bg-white dark:bg-panel p-4 rounded-lg border-2 border-panel-border dark:border-panel-border;
+    @apply relative bg-white dark:bg-panel p-4 rounded-lg border-2 border-panel-border dark:border-panel-border transition-all duration-300;
   }
   
   .comic-bubble::after {
     content: '';
-    @apply absolute w-4 h-4 bg-white dark:bg-panel border-r-2 border-b-2 border-panel-border dark:border-panel-border rotate-45;
+    @apply absolute w-4 h-4 bg-white dark:bg-panel border-r-2 border-b-2 border-panel-border dark:border-panel-border rotate-45 transition-all duration-300;
   }
   
   .comic-bubble-left::after {
@@ -163,5 +164,63 @@
   
   .matrix-rain {
     @apply fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] opacity-10;
+  }
+  
+  /* New manga theme animations */
+  .manga-panel-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:z-10;
+  }
+  
+  .manga-button {
+    @apply px-4 py-2 bg-[#8a5d3b] text-white font-manga rounded transform transition-all duration-300 
+    hover:scale-105 hover:-rotate-1 hover:shadow-lg active:scale-95;
+  }
+  
+  .manga-link {
+    @apply relative inline-block text-[#8a5d3b] font-medium after:content-[''] after:absolute 
+    after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-[#8a5d3b] 
+    after:origin-bottom-right after:transition-transform after:duration-300 
+    hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .manga-icon {
+    @apply transition-transform duration-300 hover:scale-125 hover:rotate-12;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes bounce-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .animate-bounce-soft {
+    animation: bounce-soft 2s infinite;
+  }
+  
+  @keyframes pulse-manga {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  .animate-pulse-manga {
+    animation: pulse-manga 3s infinite;
+  }
+  
+  @keyframes shake-subtle {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+  }
+  
+  .animate-shake-subtle:hover {
+    animation: shake-subtle 0.5s ease-in-out;
   }
 }

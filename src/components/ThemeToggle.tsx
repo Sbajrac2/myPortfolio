@@ -35,10 +35,12 @@ const ThemeToggle = () => {
       transition={{ delay: 0.2 }}
       onClick={toggleTheme}
       className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-14 h-14 rounded-full bg-white dark:bg-panel border-2 border-panel-border dark:border-panel-border shadow-manga hover:scale-105 transition-transform"
-      aria-label={theme === 'light' ? 'Switch to Shadow Hacker Mode' : 'Switch to Sun Knight Mode'}
+      aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
     >
       <span className="sr-only">
-        {theme === 'light' ? 'Switch to Shadow Hacker Mode' : 'Switch to Sun Knight Mode'}
+        {theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
       </span>
       <motion.div
         initial={false}
@@ -63,9 +65,6 @@ const ThemeToggle = () => {
           <Moon className="w-5 h-5 text-manga-secondary" />
         </motion.div>
       </motion.div>
-      <span className="absolute top-14 right-0 text-xs font-medium whitespace-nowrap opacity-70">
-        {theme === 'light' ? 'Sun Knight Mode' : 'Shadow Hacker Mode'}
-      </span>
     </motion.button>
   );
 };

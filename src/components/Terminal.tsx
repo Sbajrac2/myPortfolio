@@ -18,6 +18,9 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
     { command: 'cat skills.txt', response: 'Java, Python, C, HTML, GitHub, Docker, VS Code, IntelliJ IDEA, Postman, API Integration, Dash, Figma, Notion, Microsoft Office' },
     { command: 'contact', response: 'Email: shrishtika.vajra@gmail.com\nGitHub: Sbajrac2\nLinkedIn: shrishtika-bajracharya' },
     { command: 'help', response: 'Available commands:\nwhoami - Display basic info\nls -projects - List projects\ncat skills.txt - Show skills\ncontact - Display contact info\nclear - Clear terminal\nhelp - Show this help message' },
+    { command: 'fetching public logs from GitHub...', response: 'Successfully fetched repository data from GitHub.' },
+    { command: 'rendering project timelines...', response: 'Project timeline visualization complete.' },
+    { command: 'interfacing with sbajrac2/mainframe...', response: 'Connection established to mainframe database.' },
   ];
 
   // Auto-type effect for first load
@@ -87,7 +90,7 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
     
     // Check for predefined commands
     const foundCommand = predefinedCommands.find(c => 
-      command === c.command.toLowerCase()
+      command === c.command.toLowerCase() || cmd === c.command
     );
     
     if (foundCommand) {
@@ -129,12 +132,28 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
         boxShadow: "0 0 15px rgba(255, 107, 107, 0.3)",
         border: "2px solid #ff6b6b"
       }}
+      whileHover={{ 
+        boxShadow: "0 0 20px rgba(255, 107, 107, 0.5)",
+        transition: { duration: 0.2 }
+      }}
     >
       <div className="flex items-center justify-between p-2 bg-[#ff6b6b] border-b border-[#ff9e9e]">
         <div className="flex space-x-2">
-          <div className="w-3 h-3 rounded-full bg-red-500"></div>
-          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          <motion.div 
+            className="w-3 h-3 rounded-full bg-red-500"
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 0.2 }}
+          ></motion.div>
+          <motion.div 
+            className="w-3 h-3 rounded-full bg-yellow-500"
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 0.2 }}
+          ></motion.div>
+          <motion.div 
+            className="w-3 h-3 rounded-full bg-green-500"
+            whileHover={{ scale: 1.2 }}
+            transition={{ duration: 0.2 }}
+          ></motion.div>
         </div>
         <div className="text-xs font-manga text-white">terminal@shrishtika:~</div>
         <div></div>
