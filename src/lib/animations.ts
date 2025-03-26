@@ -118,13 +118,72 @@ export const comicPanel: Variants = {
   }
 };
 
+// Manga page flip animation
+export const mangaPageFlip: Variants = {
+  hidden: { 
+    opacity: 0,
+    rotateY: 70,
+    transformOrigin: "left center"
+  },
+  show: { 
+    opacity: 1,
+    rotateY: 0,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 15
+    }
+  }
+};
+
+// Manga zoom animation
+export const mangaZoom: Variants = {
+  hidden: { 
+    opacity: 0,
+    scale: 1.2
+  },
+  show: { 
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 70,
+      damping: 15
+    }
+  }
+};
+
+// Dialogue bubble pop
+export const dialogueBubble: Variants = {
+  hidden: { 
+    opacity: 0, 
+    scale: 0.5,
+    y: 10
+  },
+  show: { 
+    opacity: 1, 
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 20
+    }
+  }
+};
+
 // Page transition
 export const pageTransition: Variants = {
   initial: {
     opacity: 0,
+    x: 20,
+    transition: {
+      duration: 0.4,
+    }
   },
   enter: {
     opacity: 1,
+    x: 0,
     transition: {
       duration: 0.4,
       ease: "easeInOut",
@@ -134,6 +193,7 @@ export const pageTransition: Variants = {
   },
   exit: {
     opacity: 0,
+    x: -20,
     transition: {
       duration: 0.3,
       ease: "easeInOut",
