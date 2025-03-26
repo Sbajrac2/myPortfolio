@@ -9,6 +9,7 @@ interface TerminalProps {
 const Terminal = ({ autoType = true }: TerminalProps) => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<string[]>([]);
+  const [isTyping, setIsTyping] = useState(false);
   const terminalRef = useRef<HTMLDivElement>(null);
   
   const predefinedCommands = [
@@ -32,12 +33,23 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
     ];
     
     let totalDelay = 0;
-    typingTimeline.forEach(({ command, delay }) => {
-      totalDelay += delay;
+    
+    // Make sure we're not already typing
+    if (!isTyping) {
+      setIsTyping(true);
+      
+      typingTimeline.forEach(({ command, delay }) => {
+        totalDelay += delay;
+        setTimeout(() => {
+          typeCommand(command);
+        }, totalDelay);
+      });
+      
+      // Reset typing state after all commands have run
       setTimeout(() => {
-        typeCommand(command);
-      }, totalDelay);
-    });
+        setIsTyping(false);
+      }, totalDelay + 500);
+    }
   }, [autoType]);
 
   // Auto-scroll to bottom
@@ -80,6 +92,10 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
     
     if (foundCommand) {
       setOutput(prev => [...prev, foundCommand.response]);
+    } else if (command.startsWith('echo')) {
+      // Handle echo command
+      const message = cmd.substring(5).trim().replace(/^"|"$/g, '');
+      setOutput(prev => [...prev, message]);
     } else {
       setOutput(prev => [...prev, `Command not found: ${cmd}`]);
     }
@@ -89,8 +105,17 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      processCommand(input);
+    if (e.key === 'Enter' && !isTyping) {
+      const currentInput = input.trim();
+      if (currentInput) {
+        processCommand(currentInput);
+      }
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isTyping) {
+      setInput(e.target.value);
     }
   };
 
@@ -121,10 +146,17 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
           </div>
         ))}
         
-        <div className="flex">
+        <div className="flex items-center">
           <span className="mr-2">{'>'}</span>
-          <span>{input}</span>
-          <span className="inline-block h-4 w-2 bg-terminal-text animate-blink ml-0.5"></span>
+          <input
+            type="text"
+            value={input}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            className="flex-1 bg-transparent outline-none terminal-text"
+            disabled={isTyping}
+          />
+          <span className={`inline-block h-4 w-2 bg-terminal-text ml-0.5 ${isTyping ? 'animate-blink' : ''}`}></span>
         </div>
       </div>
     </motion.div>
