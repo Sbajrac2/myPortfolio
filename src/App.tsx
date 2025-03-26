@@ -17,16 +17,16 @@ const queryClient = new QueryClient();
 
 const App = () => {
   const [loading, setLoading] = useState({
-    splash: true,
-    terminal: true
+    terminal: true,
+    splash: true
   });
-
-  const handleSplashComplete = () => {
-    setLoading(prev => ({ ...prev, splash: false }));
-  };
 
   const handleTerminalComplete = () => {
     setLoading(prev => ({ ...prev, terminal: false }));
+  };
+
+  const handleSplashComplete = () => {
+    setLoading(prev => ({ ...prev, splash: false }));
   };
 
   return (
@@ -35,10 +35,10 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          {loading.splash && <SplashScreen onComplete={handleSplashComplete} />}
-          {!loading.splash && loading.terminal && <LoadingScreen onComplete={handleTerminalComplete} />}
+          {loading.terminal && <LoadingScreen onComplete={handleTerminalComplete} />}
+          {!loading.terminal && loading.splash && <SplashScreen onComplete={handleSplashComplete} />}
           
-          {!loading.splash && !loading.terminal && (
+          {!loading.terminal && !loading.splash && (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
