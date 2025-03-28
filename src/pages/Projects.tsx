@@ -19,7 +19,7 @@ const projects = [
     description: "An adaptive learning platform that personalizes courses based on the user's personality (RAISEC model). Dynamic lessons, quizzes, and assessments tailored to each learner.",
     tools: ["React.js", "TailwindCSS", "GoLang", "MongoDB", "Google OAuth", "GitHub", "Vercel"],
     githubUrl: "https://github.com/Sbajrac2/AI-for-Accessible-Education",
-    demoUrl: "https://lets-study-eight.vercel.app/",
+    demoUrl: "https://letsstudyai.vercel.app/",
   },
   {
     title: "Personal Portfolio",
