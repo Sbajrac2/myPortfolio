@@ -30,7 +30,7 @@ const Index = () => {
             </p>
             
             <motion.a
-              href="/profile"
+              href="/profile#top"
               variants={fadeUp}
               className="px-6 py-3 bg-[#8a5d3b] text-white rounded font-manga tracking-wide transform transition-transform hover:scale-105 hover:-rotate-1"
             >
@@ -95,19 +95,39 @@ const Index = () => {
           animate="show" 
           className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4"
         >
-          {["PROFILE", "PROJECTS", "CONTACT"].map((item, index) => (
-            <motion.a
-              key={item}
-              href={`/${item.toLowerCase()}`}
-              variants={fadeUp}
-              className="manga-panel p-4 text-center font-manga text-xl text-[#3d2914] dark:text-[#f5e7d3] hover:scale-105 transform transition-transform"
-              style={{
-                background: "linear-gradient(135deg, #e8d3b9 0%, #d9c5ac 100%)"
-              }}
-            >
-              CHAPTER {index + 1}: {item}
-            </motion.a>
-          ))}
+          <motion.a
+            key="PROFILE"
+            href="/profile#top"
+            variants={fadeUp}
+            className="manga-panel p-4 text-center font-manga text-xl text-[#3d2914] dark:text-[#f5e7d3] hover:scale-105 transform transition-transform"
+            style={{
+              background: "linear-gradient(135deg, #e8d3b9 0%, #d9c5ac 100%)"
+            }}
+          >
+            CHAPTER 1: PROFILE
+          </motion.a>
+          <motion.a
+            key="PROJECTS"
+            href="/projects"
+            variants={fadeUp}
+            className="manga-panel p-4 text-center font-manga text-xl text-[#3d2914] dark:text-[#f5e7d3] hover:scale-105 transform transition-transform"
+            style={{
+              background: "linear-gradient(135deg, #e8d3b9 0%, #d9c5ac 100%)"
+            }}
+          >
+            CHAPTER 2: PROJECTS
+          </motion.a>
+          <motion.a
+            key="CONTACT"
+            href="mailto:shrishtika.vajra@gmail.com"
+            variants={fadeUp}
+            className="manga-panel p-4 text-center font-manga text-xl text-[#3d2914] dark:text-[#f5e7d3] hover:scale-105 transform transition-transform"
+            style={{
+              background: "linear-gradient(135deg, #e8d3b9 0%, #d9c5ac 100%)"
+            }}
+          >
+            CHAPTER 3: CONTACT
+          </motion.a>
         </motion.div>
       </div>
     </Layout>

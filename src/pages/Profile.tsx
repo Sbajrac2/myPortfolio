@@ -8,7 +8,7 @@ import { Github, Linkedin, Mail, BookOpen, Globe, Award } from 'lucide-react';
 const Profile = () => {
   return (
     <Layout>
-      <div className="page-container">
+      <div id="top" className="page-container">
         <motion.section 
           variants={staggerContainer}
           initial="hidden"

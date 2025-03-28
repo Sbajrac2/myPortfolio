@@ -70,7 +70,7 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                to="/profile" 
+                to="/profile#top" 
                 className="px-5 py-2 bg-[#8a5d3b] text-white rounded font-manga hover:bg-[#73482a] transition-colors"
               >
                 READ MY STORY
@@ -96,7 +96,7 @@ const Home = () => {
                 title: "PROFILE", 
                 chapter: "01", 
                 desc: "The origin story", 
-                path: "/profile", 
+                path: "/profile#top", 
                 bgColor: "bg-gradient-to-br from-[#fec6a1] to-[#fd9b6d]" 
               },
               { 
