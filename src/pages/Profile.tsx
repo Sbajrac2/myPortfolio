@@ -32,18 +32,18 @@ const Profile = () => {
                 </h2>
                 
                 <p className="text-manga-secondary text-center font-semibold mb-6">
-                  Aspiring Software Engineer
+                  Software Engineer
                 </p>
                 
                 <div className="w-full space-y-4">
                   <div className="flex items-center space-x-3">
                     <Globe className="w-5 h-5 text-manga-secondary flex-shrink-0" />
-                    <span>SUNY Oswego</span>
+                    <span>State University of New York</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
                     <BookOpen className="w-5 h-5 text-manga-secondary flex-shrink-0" />
-                    <span>Computer Science Undergrad</span>
+                    <span>BS in Computer Science</span>
                   </div>
                   
                   <div className="flex items-center space-x-3">
@@ -91,7 +91,7 @@ const Profile = () => {
               <h2 className="font-manga text-2xl mb-4 text-manga-primary dark:text-white">ABOUT ME</h2>
               <div className="space-y-4 text-foreground/90">
                 <p>
-                  As a Computer Science undergrad at SUNY Oswego, I am passionate about creating technology that makes a positive impact. I enjoy the challenge of solving complex problems with elegant solutions.
+                  As a Computer Science undergrad at SUNY, I am passionate about creating technology that makes a positive impact. I enjoy the challenge of solving complex problems with elegant solutions.
                 </p>
                 <p>
                   My journey in software engineering began with a fascination for how digital tools could transform the way we work and live. This curiosity led me to dive into full-stack development, where I discovered my passion for building end-to-end applications.
@@ -112,7 +112,7 @@ const Profile = () => {
                 <div className="relative">
                   <div className="absolute -left-[31px] w-6 h-6 rounded-full bg-manga-secondary"></div>
                   <h3 className="text-lg font-bold">Computer Science, B.S.</h3>
-                  <p className="text-manga-secondary">SUNY Oswego</p>
+                  <p className="text-manga-secondary">State University of New York</p>
                   <p className="text-sm text-foreground/70">Expected Graduation: 2025</p>
                   <p className="mt-2">Focusing on software engineering and full-stack development. Participating in various hackathons and coding challenges.</p>
                 </div>

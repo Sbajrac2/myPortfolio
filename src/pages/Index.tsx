@@ -22,10 +22,10 @@ const Index = () => {
             }}
           >
             <h1 className="manga-text text-4xl mb-4 text-[#3d2914]">SHRISHTIKA</h1>
-            <h2 className="text-xl mb-6 text-[#8a5d3b] font-semibold">Aspiring Software Engineer</h2>
+            <h2 className="text-xl mb-6 text-[#8a5d3b] font-semibold">Software Engineer | Builder</h2>
             
             <p className="text-[#3d2914] mb-6 max-w-md">
-              Computer Science undergrad at SUNY Oswego. Passionate about tech for building smarter and helpful systems. 
+              Computer Science undergrad at SUNY. Passionate about tech for building smarter and helpful systems. 
               I enjoy working full stack and solving problems that impact real users.
             </p>
             

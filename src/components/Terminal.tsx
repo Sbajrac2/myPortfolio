@@ -13,7 +13,7 @@ const Terminal = ({ autoType = true }: TerminalProps) => {
   const terminalRef = useRef<HTMLDivElement>(null);
   
   const predefinedCommands = [
-    { command: 'whoami', response: 'Shrishtika Bajracharya - Aspiring Software Engineer' },
+    { command: 'whoami', response: 'Shrishtika Bajracharya - Software Engineer' },
     { command: 'ls -projects', response: '📁 MODIT-2.0\n📁 AI-Accessible-Education\n📁 Personal-Portfolio' },
     { command: 'cat skills.txt', response: 'Java, Python, C, HTML, GitHub, Docker, VS Code, IntelliJ IDEA, Postman, API Integration, Dash, Figma, Notion, Microsoft Office' },
     { command: 'contact', response: 'Email: shrishtika.vajra@gmail.com\nGitHub: Sbajrac2\nLinkedIn: shrishtika-bajracharya' },

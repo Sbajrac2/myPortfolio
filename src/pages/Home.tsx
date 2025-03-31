@@ -48,7 +48,7 @@ const Home = () => {
         >
           <div className="manga-panel-title mb-4">
             <h2 className="manga-text text-2xl">MAIN CHARACTER</h2>
-            <div className="text-sm opacity-80">CS Undergrad at SUNY Oswego</div>
+            <div className="text-sm opacity-80">CS Undergrad at SUNY</div>
           </div>
           
           <div className="flex-1 flex flex-col items-center justify-center text-center">
@@ -63,7 +63,7 @@ const Home = () => {
               }}
             />
             <h3 className="text-xl font-bold mb-2">Shrishtika Bajracharya</h3>
-            <p className="mb-4">Aspiring Software Engineer with a passion for building impactful solutions</p>
+            <p className="mb-4">Building things that are cool</p>
             
             <motion.div
               whileHover={{ scale: 1.05 }}

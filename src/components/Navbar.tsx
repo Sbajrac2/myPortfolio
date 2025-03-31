@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, User, Code, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Home, IdCard, Code, User, Github, Linkedin, Mail } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', path: '/', icon: <Home className="w-5 h-5" /> },
@@ -13,7 +13,8 @@ const navItems = [
 const socialLinks = [
   { name: 'GitHub', url: 'https://github.com/Sbajrac2', icon: <Github className="w-5 h-5" /> },
   { name: 'LinkedIn', url: 'https://linkedin.com/in/shrishtika-bajracharya', icon: <Linkedin className="w-5 h-5" /> },
-  { name: 'Email', url: 'mailto:shrishtika.vajra@gmail.com', icon: <Mail className="w-5 h-5" /> }
+  { name: 'Email', url: 'mailto:shrishtika.vajra@gmail.com', icon: <Mail className="w-5 h-5" /> },
+  { name: 'Resume', url:'Resume', icon:<IdCard className='w-5 h-5'/>},
 ];
 
 const Navbar = () => {

@@ -99,7 +99,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
                 transition={{ delay: 0.8, duration: 0.5 }}
                 className="text-xl sm:text-2xl font-semibold text-[#8a5d3b] mb-6"
               >
-                Aspiring Software Engineer
+                Software Engineer
               </motion.p>
               
               {/* Comic style speech bubble */}
