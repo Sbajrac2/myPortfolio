@@ -6,35 +6,37 @@ import { staggerContainer } from '@/lib/animations';
 
 const projects = [
   {
-    title: "Machine Operation Data Interpretation Tool 2.0",
-    subtitle: "MODIT 2.0",
-    description: "A web-based tool developed to enhance efficiency on production lines by allowing engineers to monitor machine activity, interpret operational data, and reduce downtime.",
-    tools: ["JavaScript", "Python", "CSS", "Git", "Dash", "Flask"],
-    githubUrl: "https://github.com/Sbajrac2/MODIT-2.0",
-    demoUrl: undefined,
-  },
-  {
     title: "AI for Accessible Education",
-    subtitle: "Adaptive Learning Platform",
-    description: "An adaptive learning platform that personalizes courses based on the user's personality (RAISEC model). Dynamic lessons, quizzes, and assessments tailored to each learner.",
-    tools: ["React.js", "TailwindCSS", "GoLang", "MongoDB", "Google OAuth", "GitHub", "Vercel"],
+    subtitle: "AI powered Adaptive Learning Platform",
+    description: "An advanced adaptive learning platform that customizes courses based on the user’s personality using the RAISEC model. It delivers dynamic lessons, quizzes, and assessments that evolve with each learner, ensuring a personalized and engaging educational experience.",
+    tools: ["React.js", "TailwindCSS", "GoLang", "MongoDB", "Google OAuth","Vercel"],
     githubUrl: "https://github.com/Sbajrac2/AI-for-Accessible-Education",
     demoUrl: "https://letsstudyai.vercel.app/",
   },
   {
-    title: "Personal Portfolio",
-    subtitle: "Manga Developer Showcase",
-    description: "My personal portfolio website with a manga-inspired design. Features interactive elements, comic-style layouts, and seamless animations to showcase my projects and skills.",
-    tools: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "GitHub API"],
-    githubUrl: "https://github.com/Sbajrac2/Personal-Portfolio",
+    title: "Chhitto",
+    subtitle: "AI Agentic Voice Assistant for Small Businesses.",
+    description: "An AI-powered platform offering voice assistants for customer service and a dynamic inventory management system tailored to the specific needs of small businesses. This solution streamlines operations, enhances customer interactions, and provides real-time inventory tracking for optimal efficiency.",
+    tools: ["Express.js","Supabase", "OpenAI Realtime API", "Twillio", "Vercel"],
+    githubUrl: "https://github.com/Sbajrac2/Chhitto-Webapp",
+    demoUrl: "https://chhitto.vercel.app/",
+  },
+
+  {
+    title: "Machine Operation Data Interpretation Tool 2.0",
+    subtitle: "MODIT 2.0",
+    description: "A web-based tool developed to enhance efficiency on production lines by allowing engineers to monitor machine activity, interpret operational data, and reduce downtime.",
+    tools: ["JavaScript", "Python", "CSS", "Git", "Dash", "Flask"],
+    githubUrl: "https://github.com/nidhip26/MODIT2.0",
     demoUrl: undefined,
   },
+  
   {
-    title: "Smart Campus Navigator",
-    subtitle: "University Wayfinding App",
-    description: "A mobile-optimized web application for helping new students navigate university campuses. Features interactive maps, class schedule integration, and optimal route planning.",
-    tools: ["React Native", "Express.js", "MongoDB", "Google Maps API", "PWA"],
-    githubUrl: "https://github.com/Sbajrac2/campus-navigator",
+    title: "CapitalRewards",
+    subtitle: "Maximizing CreditCard Benefits",
+    description: "A mobile-optimized web application for centralizing all your credit cards in one digital wallet, track rewards, offers, and benefits, and find the best card for every purchase.",
+    tools: ["React Native", "Express.js", "MongoDB", "PWA"],
+    githubUrl: "https://github.com/Sbajrac2/capitalrewards",
     demoUrl: undefined,
   }
 ];

@@ -3,20 +3,22 @@ import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer } from '@/lib/animations';
 
 const skills = [
-  { name: 'Java', level: 85 },
-  { name: 'Python', level: 80 },
+  { name: 'Java', level: 90 },
+  { name: 'Javascript', level: 90 },
+  { name: 'Python', level: 90},
   { name: 'C', level: 70 },
-  { name: 'HTML', level: 90 },
-  { name: 'GitHub', level: 85 },
-  { name: 'Docker', level: 75 },
-  { name: 'VS Code', level: 95 },
-  { name: 'IntelliJ IDEA', level: 85 },
+  { name: 'C++', level: 80 },
+  { name: 'Go', level: 90 },
+  { name: 'Docker', level: 80 },
+  { name: 'Supabase', level: 75},
+  { name: 'AWS', level: 95 },
+  { name: 'Google Cloud', level: 85 },
   { name: 'Postman', level: 80 },
-  { name: 'API Integration', level: 85 },
-  { name: 'Dash', level: 75 },
+  { name: 'MongoDB', level: 85 },
+  { name: 'Microservices', level: 75 },
   { name: 'Figma', level: 70 },
   { name: 'Notion', level: 90 },
-  { name: 'Microsoft Office', level: 85 },
+  { name: 'Framer', level: 85 },
 ];
 
 // Split skills into two columns

@@ -113,16 +113,8 @@ const Profile = () => {
                   <div className="absolute -left-[31px] w-6 h-6 rounded-full bg-manga-secondary"></div>
                   <h3 className="text-lg font-bold">Computer Science, B.S.</h3>
                   <p className="text-manga-secondary">SUNY Oswego</p>
-                  <p className="text-sm text-foreground/70">Expected Graduation: 2024</p>
+                  <p className="text-sm text-foreground/70">Expected Graduation: 2025</p>
                   <p className="mt-2">Focusing on software engineering and full-stack development. Participating in various hackathons and coding challenges.</p>
-                </div>
-                
-                <div className="relative">
-                  <div className="absolute -left-[31px] w-6 h-6 rounded-full bg-manga-secondary"></div>
-                  <h3 className="text-lg font-bold">Web Development Certification</h3>
-                  <p className="text-manga-secondary">Online Course</p>
-                  <p className="text-sm text-foreground/70">2022</p>
-                  <p className="mt-2">Completed comprehensive training in modern web technologies including React, Node.js, and database management.</p>
                 </div>
               </div>
             </motion.div>
