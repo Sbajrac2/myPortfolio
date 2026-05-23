@@ -7,7 +7,9 @@ import { Menu, X, Home, IdCard, Code, User, Github, Linkedin, Mail } from 'lucid
 const navItems = [
   { name: 'Home', path: '/', icon: <Home className="w-5 h-5" /> },
   { name: 'Profile', path: '/profile', icon: <User className="w-5 h-5" /> },
-  { name: 'Projects', path: '/projects', icon: <Code className="w-5 h-5" /> }
+  { name: 'Projects', path: '/projects', icon: <Code className="w-5 h-5" /> },
+  { name: 'Skills', path: '/skills', icon: <Code className="w-5 h-5" /> },
+  { name: 'Articles', path: '/articles', icon: <IdCard className="w-5 h-5" /> }
 ];
 
 const socialLinks = [
@@ -28,7 +30,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-40">
-      <nav className="relative flex justify-between items-center px-4 sm:px-6 py-4">
+      <nav className="relative flex justify-between items-center px-4 sm:px-6 py-4 bg-[#3d2914]/70 backdrop-blur-md border-b border-[#8a5d3b] shadow-lg">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <div className="w-10 h-10 bg-manga-secondary flex items-center justify-center rounded-md transform -rotate-3 shadow-lg mr-3">

@@ -12,7 +12,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
-
+import Skills from './pages/Skills';
+import Articles from './pages/Articles';
+import ProjectDetail from "./pages/ProjectDetail";
 // Create a QueryClient
 const queryClient = new QueryClient();
 
@@ -44,7 +46,10 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/articles" element={<Articles />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/projects/:slug" element={<ProjectDetail />} />
             </Routes>
           )}
         </BrowserRouter>
